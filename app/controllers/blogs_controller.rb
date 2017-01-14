@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
+    @entries = @blog.entries.all
   end
 
   # GET /blog/new
