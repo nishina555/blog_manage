@@ -23,8 +23,6 @@ class EntriesController < ApplicationController
         format.html { render :new }
       end
     end
-
-
   end
   private
     def set_entry
