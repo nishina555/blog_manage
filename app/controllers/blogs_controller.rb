@@ -1,6 +1,6 @@
 # class
 class BlogsController < ApplicationController
-  before_action :set_entry, only: [:show]
+  before_action :set_entry, only: [:show, :destroy]
 
   # GET /blogs
   def index
@@ -35,9 +35,12 @@ class BlogsController < ApplicationController
   end
 
   # DELETE /entries/1
-  # def destroy
-  #
-  # end
+  def destroy
+    @blog.destroy
+    respond_to do |format|
+       format.html { redirect_to blogs_url}
+    end
+  end
 
   private
     def set_entry

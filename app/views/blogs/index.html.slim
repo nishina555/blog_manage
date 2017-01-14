@@ -16,6 +16,6 @@ table
         td
           | Edit
         td
-          | Destroy
+          = link_to 'Destroy', blog, method: :delete
 
 = link_to 'New Blog', new_blog_path
