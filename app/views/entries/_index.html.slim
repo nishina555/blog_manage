@@ -20,6 +20,6 @@ table
         td
           | Edit
         td
-          | Delete
+          = link_to 'Destroy', blog_entry_path(:id => entry.id, :blog_id => params[:id]), method: :delete
 
 = link_to 'New Entry', new_blog_entry_path(:blog_id => params[:id])

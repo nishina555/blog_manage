@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show]
+  before_action :set_entry, only: [:show, :destroy]
   # def index
   #   @blog = Blog.where(:id => params[:blog_id]).first
   #   @entries = @blog.entries.all
@@ -23,6 +23,13 @@ class EntriesController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+  def destroy
+    @entry.destroy
+    respond_to do |format|
+      format.html {redirect_to blog_url(:id => params[:blog_id])}
+    end
+
   end
   private
     def set_entry
