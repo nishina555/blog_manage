@@ -7,12 +7,12 @@ table
         | Title
       th[colspan="3"]
   tbody
-    - @blogs.each do |entry|
+    - @blogs.each do |blog|
       tr
         td
-          = entry.title
+          = blog.title
         td
-          | Show
+          = link_to 'Show', blog
         td
           | Edit
         td
