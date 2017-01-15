@@ -9,4 +9,5 @@ p
     | Body:
   = @entry.body
 = render 'comments/index'
+= render 'comments/form', comment: @comments.new
 = link_to 'Back_EntryList', blog_path(:id => params[:blog_id])

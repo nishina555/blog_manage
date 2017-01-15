@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20170109133457) do
   create_table "comments", force: :cascade do |t|
     t.integer  "entry_id"
     t.text     "body"
-    t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "status",     default: "unapproved"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["entry_id"], name: "index_comments_on_entry_id"
   end
 
