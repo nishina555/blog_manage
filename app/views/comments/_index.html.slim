@@ -19,4 +19,4 @@ table
           td
             = link_to 'Approve', approve_blog_entry_comment_path(:entry_id => @entry.id, :id => comment.id, :status => 'approved'), method: :put
         td
-          | Destroy
+          = link_to 'Destroy', blog_entry_comment_path(:entry_id => @entry.id, :id => comment.id), method: :delete

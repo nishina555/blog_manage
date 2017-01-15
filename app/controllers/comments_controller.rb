@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:destroy]
   def approve
     params.permit(:status)
     @comment = Comment.find(params[:id])
@@ -23,7 +24,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to blog_entry_url(:blog_id => params[:blog_id], :id => params[:entry_id])}
+    end
+
+  end
+
   private
+    def set_comment
+      @entry = Entry.where(:id => params[:entry_id]).first
+      @comment = @entry.comments.find(params[:id])
+    end
     def comment_params
       params.require(:comment).permit(:body)
     end
