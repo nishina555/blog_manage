@@ -5,6 +5,7 @@ class EntriesController < ApplicationController
   #   @entries = @blog.entries.all
   # end
   def show
+    @comments = @entry.comments.all
   end
 
   def new

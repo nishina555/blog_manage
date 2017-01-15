@@ -46,6 +46,7 @@ class BlogsController < ApplicationController
       @blog = Blog.find(params[:id])
     end
     def blog_params
+      binding.pry
       params.require(:blog).permit(:title)
     end
 end

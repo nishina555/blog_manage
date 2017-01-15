@@ -8,4 +8,5 @@ p
   strong
     | Body:
   = @entry.body
+= render 'comments/index'
 = link_to 'Back_EntryList', blog_path(:id => params[:blog_id])
