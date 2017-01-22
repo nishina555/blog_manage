@@ -26,7 +26,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog}
+        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
       else
         format.html { render :new }
       end

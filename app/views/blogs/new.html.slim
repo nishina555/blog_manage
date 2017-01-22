@@ -1,3 +1,7 @@
+- if @blog.errors.any?
+  - @blog.errors.full_messages.each do |message|
+    p
+      = message
 h1
   | New blog
 = render 'form', blog: @blog
