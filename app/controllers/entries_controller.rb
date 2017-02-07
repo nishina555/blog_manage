@@ -22,7 +22,8 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to [@blog, @entry] }
+        # format.html { redirect_to [@blog, @entry], notice: 'Entry was successfully created.' }
+        format.html { redirect_to @blog, notice: 'Entry was successfully created.' }
       else
         format.html { render :new }
       end
