@@ -1,12 +1,9 @@
 h2
   = @blog.title
-p
+h3
   strong
-    | Title:
-  = @entry.title
+    = @entry.title
 p
-  strong
-    | Body:
   = @entry.body
 = render 'comments/index'
 = render 'comments/form', comment: @comments.new
