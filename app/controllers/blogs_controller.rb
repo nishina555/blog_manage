@@ -1,6 +1,6 @@
 # class
 class BlogsController < ApplicationController
-  before_action :set_entry, only: [:show, :edit, :destroy]
+  before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs
   def index
