@@ -1,16 +1,12 @@
-table
-  tbody
-    - @entries.each do |entry|
-      tr
-        td
-          = entry.title
-        td
-          = entry.body
-        td
-          = link_to 'Show', blog_entry_path(:id => entry.id, :blog_id => params[:id])
-        td
-          = link_to 'Edit', edit_blog_entry_path(:id => entry.id, :blog_id => params[:id])
-        td
-          = link_to 'Destroy', blog_entry_path(:id => entry.id, :blog_id => params[:id]), method: :delete
+- @entries.each do |entry|
+  div
+    strong = entry.title
+    div = entry.body
+    div
+      = link_to 'Show', blog_entry_path(:id => entry.id, :blog_id => params[:id])
+      |  |
+      = link_to 'Edit', edit_blog_entry_path(:id => entry.id, :blog_id => params[:id])
+      |  |
+      = link_to 'Destroy', blog_entry_path(:id => entry.id, :blog_id => params[:id]), method: :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'New Entry', new_blog_entry_path(:blog_id => params[:id])

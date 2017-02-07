@@ -1,6 +1,5 @@
 = form_for(comment, url: blog_entry_comments_path(:entry_id => params[:id])) do |f|
   .field
-    = f.label :body
     = f.text_area :body
   .actions
     = f.submit('Save')

@@ -2,7 +2,7 @@ table
   thead
     tr
       th
-        | コメント一覧
+        | Comment list
       th[colspan="2"]
   tbody
     - @comments.each do |comment|
@@ -17,4 +17,4 @@ table
           td
             = link_to 'Approve', approve_blog_entry_comment_path(:entry_id => @entry.id, :id => comment.id, :status => 'approved'), method: :put
         td
-          = link_to 'Destroy', blog_entry_comment_path(:entry_id => @entry.id, :id => comment.id), method: :delete
+          = link_to 'Destroy', blog_entry_comment_path(:entry_id => @entry.id, :id => comment.id), method: :delete, data: { confirm: 'Are you sure?' }
