@@ -1,6 +1,6 @@
 # class
 class BlogsController < ApplicationController
-  before_action :set_entry, only: [:show, :destroy]
+  before_action :set_entry, only: [:show, :edit, :destroy]
 
   # GET /blogs
   def index
@@ -17,9 +17,8 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
-  # def edit
-  #
-  # end
+  def edit
+  end
 
   # POST /blogs
   def create
@@ -30,6 +29,16 @@ class BlogsController < ApplicationController
       else
         format.html { render :new }
       end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @blog.update(blog_params)
+        format.html { redirect_to @blog, notice: 'Blog was successfully updated.'}
+        format.json { render :show }
+      end
+        format.html { render :edit }
     end
   end
 

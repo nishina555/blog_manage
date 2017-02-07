@@ -1,0 +1,4 @@
+h1
+  | Editing Entries
+= render 'edit_form', entry: @entry
+= link_to 'Back_EntryList', blog_path(:id => params[:blog_id])

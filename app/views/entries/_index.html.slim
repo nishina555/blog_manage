@@ -18,7 +18,7 @@ table
         td
           = link_to 'Show', blog_entry_path(:id => entry.id, :blog_id => params[:id])
         td
-          | Edit
+          = link_to 'Edit', edit_blog_entry_path(:id => entry.id, :blog_id => params[:id])
         td
           = link_to 'Destroy', blog_entry_path(:id => entry.id, :blog_id => params[:id]), method: :delete
 

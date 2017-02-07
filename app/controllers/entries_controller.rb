@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only: [:show, :destroy]
+  before_action :set_entry, only: [:show, :edit, :update, :destroy]
   # def index
   #   @blog = Blog.where(:id => params[:blog_id]).first
   #   @entries = @blog.entries.all
@@ -11,6 +11,9 @@ class EntriesController < ApplicationController
   def new
     @blog = Blog.where(:id => params[:blog_id]).first
     @entry = @blog.entries.build
+  end
+
+  def edit
   end
 
   def create
@@ -25,6 +28,17 @@ class EntriesController < ApplicationController
       end
     end
   end
+
+  def update
+    respond_to do |format|
+      if @entry.update(entry_params)
+        format.html { redirect_to blog_url(:id => params[:blog_id]) , notice: 'Entry was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
   def destroy
     @entry.destroy
     respond_to do |format|
