@@ -1,5 +1,6 @@
-p#notice
-  = notice
+- if flash[:notice]
+  .alert.alert-success
+    = flash[:notice]
 h2
   = @blog.title
 = render 'entries/index'
