@@ -5,6 +5,6 @@ article
     = @entry.title
   section
     = @entry.body
-= render 'comments/index'
-= render 'comments/form', comment: @comments.new
-= link_to 'Back_EntryList', blog_path(:id => params[:blog_id])
+  = render 'comments/index'
+  = render 'comments/form', comment: @comments.new
+  = link_to 'Back_EntryList', blog_path(:id => params[:blog_id])

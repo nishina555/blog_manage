@@ -1,9 +1,7 @@
-= form_for(entry, url: blog_entry_path) do |f|
+= bootstrap_form_for(entry, url: blog_entry_path) do |f|
   .field
-    = f.label :title
     = f.text_area :title
   .field
-    = f.label :body
-    = f.text_area :body
+    = f.text_area :body, rows:30
   .actions
     = f.submit('Save')
