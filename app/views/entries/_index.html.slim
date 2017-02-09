@@ -1,7 +1,11 @@
 - @entries.each do |entry|
-  div
-    strong = entry.title
-    div = entry.body
+  .entry
+    .panel.panel-default
+      .panel-heading
+        strong.panel-title
+          = entry.title
+      .panel-body
+         = entry.body
     div
       = link_to 'Show', blog_entry_path(:id => entry.id, :blog_id => params[:id])
       |  |

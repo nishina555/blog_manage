@@ -1,10 +1,10 @@
 h2
   = @blog.title
-h3
-  strong
+article
+  .title
     = @entry.title
-p
-  = @entry.body
+  section
+    = @entry.body
 = render 'comments/index'
 = render 'comments/form', comment: @comments.new
 = link_to 'Back_EntryList', blog_path(:id => params[:blog_id])

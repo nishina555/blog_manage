@@ -1,2 +1,39 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+  background-color: snow;
+  color: #00CC66;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.entry {
+  margin: 20px 0px;
+}
+
+.panel {
+  margin-bottom: 1px;
+  color: black;
+}
+
+article {
+  color: black;
+  width:650px;
+  background-color: #FFFFFF;
+  padding: 20px
+}
+
+article .title {
+  border: solid 1px red;
+  font-size: 30px;
+  padding: 10px;
+}
+
+section {
+  font-size: 15px;
+  line-height: 40px;
+}
