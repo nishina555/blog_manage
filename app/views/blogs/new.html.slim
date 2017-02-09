@@ -1,6 +1,2 @@
-- if @blog.errors.any?
-  - @blog.errors.full_messages.each do |message|
-    p
-      = message
 = render 'form', blog: @blog
 = link_to 'Back_BlogList', root_path

@@ -1,7 +1,3 @@
-- if @entry.errors.any?
-  - @entry.errors.full_messages.each do |message|
-    p
-      = message
 h2
   = @blog.title
 = render 'new_form', entry: @entry
